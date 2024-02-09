@@ -1,0 +1,5 @@
+<div class="pokemon" (click)="clic.emit(id)">
+  <img src='https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{id}}.png' alt="" />
+  <p *ngIf="data" class="nombre-pokemon">{{data.name | titlecase}}</p>
+  <p class="id-pokemon">#{{id}}</p>
+</div>

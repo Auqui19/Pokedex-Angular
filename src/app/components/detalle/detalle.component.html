@@ -1,0 +1,94 @@
+<div id="container">
+  <div class="main-detalle">
+    <div
+      *ngIf="pokemon && pokemon.types && pokemon.types.length > 0"
+      class="barra"
+      [style.background-color]="tiposColores[pokemon.types[0].type.name]"
+    ></div>
+    <div class="imagen-detalle">
+      <img src="{{ pokemon.sprites.front_default }}" alt="" *ngIf="pokemon" />
+      <div class="detalle">
+        <p class="id-pokemon">#{{ pokemon?.id }}</p>
+        <p class="nombre">{{ pokemon?.name | titlecase }}</p>
+        <div class="tipo">
+          <span
+            class="tipos"
+            *ngFor="let tipo of pokemon?.types"
+            [style.background-color]="tiposColores[tipo.type.name]"
+            >{{ tipo.type.name | uppercase }}</span
+          >
+        </div>
+      </div>
+    </div>
+    <div class="desc">
+      <P>{{ descripcion }}</P>
+    </div>
+    <div class="caja-datos">
+      <div class="hijo-datos">
+        Peso:<span> {{ pokemon?.weight }}°</span>
+      </div>
+      <div class="hijo-datos">
+        Alt. <span>{{ pokemon?.height }} lbs.</span>
+      </div>
+      <div class="hijo-datos">
+        Exp: <span>{{ pokemon?.base_experience }}</span>
+      </div>
+    </div>
+    <div class="caja-estadisticas">
+      <p class="est-titu">Estadísticas</p>
+      <div class="caja-hijo-est">
+        <div class="estadis-hijo">
+          <p>Max CP</p>
+          <div class="barra-pri">
+            <div class="est-barra" [style.width.px]="getMaxCP()">
+              <div class="valor-esta">{{ getMaxCP() }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="estadis-hijo">
+          <p>Max HP</p>
+          <div class="barra-pri">
+            <div class="est-barra" [style.width.px]="getMaxHP()">
+              <div class="valor-esta">{{ getMaxHP() }}</div>
+            </div>
+          </div>
+        </div>
+        <br />
+        <div class="estadis-hijo">
+          <p>Ataque</p>
+          <div class="barra-pri">
+            <div class="est-barra" [style.width.px]="getAttack()">
+              <div class="valor-esta">{{ getAttack() }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="estadis-hijo">
+          <p>Defensa</p>
+          <div class="barra-pri">
+            <div class="est-barra" [style.width.px]="getDefense()">
+              <div class="valor-esta">{{ getDefense() }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="estadis-hijo">
+          <p>Estamina</p>
+          <div class="barra-pri">
+            <div class="est-barra" [style.width.px]="getStamina()">
+              <div class="valor-esta">{{ getStamina() }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="debilidad">
+      <div *ngIf="pokemon">
+        <p>Debilidades:</p>
+        <span
+          *ngFor="let debilidad of debilidades"
+          [style.background-color]="tiposColores[debilidad]"
+          >{{ debilidad | uppercase }}</span
+        >
+      </div>
+    </div>
+  </div>
+</div>

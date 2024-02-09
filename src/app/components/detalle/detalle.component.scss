@@ -1,0 +1,184 @@
+#container {
+
+    height: 100%;
+    margin-bottom: 20px;
+
+    .main-detalle {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+       
+        background-color: #fff;
+        height: 100%;
+        border-radius: 8px;
+        box-shadow: 0px 0px 2px #000;
+
+        .barra {
+            border-radius: 8px 8px 0px 0px;
+            width: 100%;
+            height: 10px;
+        }
+
+        .imagen-detalle {
+            display: flex;
+            padding: 0px 20px;
+            gap: 15px;
+
+            img{
+                image-rendering: pixelated;
+            }
+        }
+
+        .caja-datos {
+            width: 100%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            padding: 15px 20px;
+
+            .hijo-datos {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-color: #c9c9c9;
+                padding: 8px 15px;
+                border-radius: 5px;
+            }
+        }
+
+        .detalle {
+            display: flex;
+            flex-direction: column;
+            
+
+            .id-pokemon {
+                color: #c9c9c9;
+                font-size: 15px;
+                margin: 4px 0px;
+            }
+
+            .nombre {
+                font-size: 24px;
+                margin-bottom: 8px;
+            }
+
+            .tipos {
+                padding: 4px 8px;
+                color: #fff;
+                margin-right: 5px;
+                font-size: 13px;
+                border-radius: 5px;
+            }
+        }
+
+        .desc {
+            padding: 0px 20px;
+
+            p {
+                color: #B2BBC0;
+            }
+        }
+
+
+
+        .caja-estadisticas {
+            padding: 0px 20px;
+            display: flex;
+            flex-direction: column;
+
+            .est-titu {
+                font-size: 15px;
+                color: #000;
+                margin-bottom: 5px;
+            }
+
+            p {
+                color: #B2BBC0;
+            }
+
+            .caja-hijo-est {
+
+                .estadis-hijo {
+
+                    padding: 7px 0px;
+
+                    .barra-pri {
+                        width: 100%;
+                        background-color: #DEDEDE;
+
+
+                        .est-barra {
+                            width: 100%;
+                            border-radius: 1px;
+                            height: 10px;
+                            background-color: #2062AC;
+                            display: flex;
+                            justify-content: flex-end;
+
+                            .valor-esta {
+                                background-color: #fff;
+                                padding: 1px 8px;
+                                font-size: 13px;
+                                border: 1px solid #DEDEDE;
+                                position: absolute;
+                                border-radius: 1px;
+                                transform: translateY(-4px) translateX(20px);
+                            }
+                        }
+
+                    }
+
+                    p {
+                        width: 33%;
+                        font-size: 13px;
+                    }
+
+
+
+                    display: flex;
+                    align-items: center;
+                }
+            }
+        }
+
+        .debilidad {
+            padding: 0px 20px;
+
+            div {
+                p{
+                    margin: 10px 0px;
+                }
+                span {
+                    padding: 4px 8px;
+                    color: #fff;
+                    margin-right: 5px;
+                    font-size: 13px;
+                    border-radius: 5px;
+                }
+            }
+        }
+    }
+}
+
+:host.pc #container{
+    
+    height: 100%;
+    .caja-datos {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 20px;
+
+        .hijo-datos {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #c9c9c9;
+            padding: 8px 15px;
+            border-radius: 5px;
+        }
+    }
+}

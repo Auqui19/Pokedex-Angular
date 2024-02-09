@@ -1,0 +1,31 @@
+<main id="container">
+  <div class="lista-poke">
+    <div class="main-tarjeta">
+      <div class="nav-tarjeta">
+        <div class="logo"><img src="../../../assets/logo-pokeball.png" alt="pokedex" srcset=""><div class="logo-tarjeta">Pokedex</div></div>
+        <div class="menu-tarjeta">
+          
+        </div>
+      </div>
+      <div class="lista-tarjeta" >
+        <app-tarjeta appResponsive *ngFor="let pokemon of listaPokemon"
+         [data]="pokemon"
+         (clic)="clicTarjeta($event)"
+        />
+      </div>
+    </div>
+  </div>
+  <div class="detalle-poke">
+    <!-- Verifica si pokemonDetalle está definido -->
+    <ng-container *ngIf="pokemonDetalle">
+      <app-detalle appResponsive [pokemon]="pokemonDetalle"></app-detalle>
+    </ng-container>
+    <!-- Si pokemonDetalle no está definido, muestra el mensaje -->
+    <ng-container *ngIf="!pokemonDetalle">
+      <div class="selecion">
+        <p>Selecciona un Pokémon</p>
+        <img src="../../../assets/logo-pokeball.png" alt="">
+      </div>
+    </ng-container>
+  </div>
+</main>

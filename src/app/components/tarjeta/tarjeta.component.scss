@@ -1,0 +1,29 @@
+.pokemon {
+    
+    padding: 5px 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    transition: all .2s ease;
+    border: 1px solid #ffffff;
+
+    .nombre-pokemon {
+        margin-top: 10px;
+    }
+
+    img{
+        width: 100%;
+        image-rendering: pixelated;
+    }
+    .id-pokemon {
+        color: #c9c9c9;
+        font-size: 12px;
+        margin-top: 6px;
+    }
+
+}
+
+.pokemon:hover{
+    border: 1px solid #c9c9c9;
+}
